@@ -92,13 +92,13 @@ pipeline{
                 removeContainer()
             }
         }
-        stage('Kube deploy'){
+        stage('K8S deploy'){
         when { expression { params.action == 'create'}}    
             steps{
                 kubeDeploy()
             }
         }
-        stage('kube deleter'){
+        stage('kube delete'){
         when { expression { params.action == 'delete'}}    
             steps{
                 kubeDelete()
