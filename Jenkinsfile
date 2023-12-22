@@ -3,7 +3,6 @@ def COLOR_MAP = [
     'FAILURE' : 'danger',
     'SUCCESS' : 'good'
 ]
-
 pipeline{
     agent any
     parameters {
@@ -17,7 +16,7 @@ pipeline{
             environment {
                 SCANNER_HOME=tool 'sonar-scanner'
                 }
-        
+       
     stages{
         stage('Clean Workspace'){
             steps{
@@ -115,6 +114,5 @@ pipeline{
                  message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
                )
            }
-       }
-      
+       }  
    }
