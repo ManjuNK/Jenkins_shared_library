@@ -12,14 +12,12 @@ pipeline{
         string(name: 'IMAGE_NAME', defaultValue: 'youtube', description: 'Docker Image Name')
         }
          tools{
-             
-        nodejs 'nodejs21'
-    }
+            nodejs 'nodejs21'
+            }
     environment {
         SCANNER_HOME=tool 'sonar-scanner'
-      }
-    
-    
+        }
+        
     stages{
         stage('Clean Workspace'){
             steps{
