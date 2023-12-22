@@ -11,12 +11,12 @@ pipeline{
         string(name: 'DOCKER_HUB_USERNAME', defaultValue: 'manjunk', description: 'Docker Hub Username')
         string(name: 'IMAGE_NAME', defaultValue: 'youtube', description: 'Docker Image Name')
         }
-         tools{
+        tools{
             nodejs 'nodejs21'
             }
-    environment {
-        SCANNER_HOME=tool 'sonar-scanner'
-        }
+            environment {
+                SCANNER_HOME=tool 'sonar-scanner'
+                }
         
     stages{
         stage('Clean Workspace'){
